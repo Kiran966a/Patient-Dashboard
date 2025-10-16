@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&display=swap');
+
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 7rem 8% 4rem;
+  min-height: 90vh;
+  background: linear-gradient(135deg, #fbe8ff, #e2f4ff);
+  border-radius: 25px;
+  gap: 3rem;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-left h2 {
+  font-family: 'BBH Sans Bartle', sans-serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 0.5rem;
+}
+
+.hero-left h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  background: linear-gradient(135deg, #f5f5f5, #d9d9d9);
+  color: #bb92d5; 
+  margin-bottom: 1.5rem;
+  padding-left: 2vw;
+  display: inline-block;
+  position: relative;
+}
+
+.hero-title::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 1.1em;
+  background-color: #bb92d5;
+  margin-left: 5px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.hero-left p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Buttons */
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.hero-btns button {
+  padding: 0.9rem 2rem;
+  background: linear-gradient(90deg, #c9afd9, #9c27b0);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-btns button:hover {
+  background: #f5f5f5;
+  color: #555555;
+  transform: translateY(-2px);
+}
+
+.contact-btn {
+  background-color: #6a6a6a;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 0.8rem 1.8rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.contact-btn:hover {
+  background-color: #333030;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-right img {
+  width: 70%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.hero-right img:hover {
+  transform: scale(1.05);
+}
+
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+  font-family: 'BBH Sans Bartle', sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  background: #f8f9fb;
+  transition: all 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #6a1b9a;
+  outline: none;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.form-buttons button {
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.form-buttons button[type="submit"] {
+  background: #6a1b9a;
+  color: #fff;
+}
+
+.form-buttons button[type="submit"]:hover {
+  background: #8a4db2;
+}
+
+.form-buttons button[type="button"] {
+  background: #ccc;
+}
+
+.form-buttons button[type="button"]:hover {
+  background: #aaa;
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 6rem 6% 3rem;
+  }
+
+  .hero-left {
+    align-items: center;
+  }
+
+  .hero-left h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .hero-left h1 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    padding-left: 0;
+  }
+
+  .hero-right img {
+    width: 80%;
+    max-width: 300px;
+    margin-top: 1.5rem;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
+}

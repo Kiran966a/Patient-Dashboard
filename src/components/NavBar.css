@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;600&display=swap');
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
+  animation: fadeSlide 1s ease forwards;
+  padding-bottom: 5%;
+}
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.nav-logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #4b2b7f;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  cursor: pointer;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.8rem;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.nav-links a {
+  color: #333333;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #7d4caf;
+  transition: width 0.3s;
+}
+
+.nav-links a:hover {
+  color: #7d4caf;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: none;
+  transition: transform 0.3s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 0 0 10px 10px;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-logo {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    width: 95%;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+}

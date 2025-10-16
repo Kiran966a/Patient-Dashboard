@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Dancing+Script:wght@600&display=swap');
+
+.patients-container {
+  padding: 5rem 8%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fb, #e0e5ec);
+  padding-top: calc(5rem + 60px); 
+}
+
+.patients-title {
+   font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #555;
+}
+
+.patients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+}
+
+.patient-card {
+  background: linear-gradient(145deg, #ffffff, #f1f3f6);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+}
+
+.patient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.patient-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.patient-card p {
+  font-family: 'Montserrat', sans-serif;
+  color: #666;
+  margin: 0.3rem 0;
+}
+
+.view-btn {
+  margin-top: 1rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #d3c0f9, #a29bfe);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  background: #b0a6f0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .patients-container {
+    padding: 3rem 5%;
+    padding-top: calc(3rem + 60px); 
+  }
+
+  .patients-title {
+    font-size: 2.5rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0; 
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.modal-content p {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+.modal-content button {
+  margin-top: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: #6a6a6a;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+  background: #505050;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  width: 80%;
+  max-width: 400px;
+  padding: 0.8rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 10px rgba(106, 27, 154, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+.modal-close:hover {
+  color: #000;
+  transform: scale(1.2);
+}
+
+.add-btn-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-btn {
+  padding: 0.7rem 1.8rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-btn:hover {
+  background: linear-gradient(90deg, #6c5ce7, #5e50d3);
+  transform: translateY(-2px);
+}
+
+.patient-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.12);
+}
+
+.add-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.add-modal-content {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.add-modal-title {
+  margin-bottom: 1rem;
+  color: #333;
+  font-family: 'Dancing Script', cursive;
+}
+
+.add-modal-form .add-modal-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.add-modal-form .add-modal-input:focus {
+  outline: none;
+  border-color: #6a1b9a;
+  box-shadow: 0 0 10px rgba(106,27,154,0.2);
+}
+
+.add-modal-submit {
+  width: 100%;
+  padding: 0.7rem 1.5rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.add-modal-submit:hover {
+  background: linear-gradient(90deg, #6c5ce7, #5e50d3);
+  transform: translateY(-2px);
+}
+
+.spinner-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fb;
+  z-index: 9999;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #6c5ce7;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
